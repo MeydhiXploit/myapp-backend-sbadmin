@@ -8,23 +8,27 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" method="post" action="<?= base_url('auth/registration'); ?>">
                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control form-control-user"
+                                    <input type="text" name="name" id="name" class="form-control form-control-user"
                                         placeholder="Full name">
+                                        <?= form_error('name','<small class="text-danger pl-3">','</small>'); ?>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="email" class="form-control form-control-user"
+                                    <input type="text" name="email" id="email" class="form-control form-control-user"
                                         placeholder="Email Address">
+                                        <?= form_error('email','<small class="text-danger pl-3">','</small>'); ?>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
                                             name="password1" placeholder="Password">
+                                        <?= form_error('password1','<small class="text-danger pl-3">','</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
                                             name="password2" placeholder="Repeat Password">
+                                            <?= form_error('password2','<small class="text-danger pl-3">','</small>'); ?>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
